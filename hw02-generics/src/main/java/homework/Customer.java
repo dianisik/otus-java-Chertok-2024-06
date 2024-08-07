@@ -4,13 +4,20 @@ import java.util.Objects;
 
 public class Customer implements Comparable<Customer> {
     private final long id;
-    private static String name;
-    private long scores;
+    private  String name;
+    private final long scores;
 
     public Customer(long id, String name, long scores) {
         this.id = id;
-        Customer.name = name;
+        this.name = name;
         this.scores = scores;
+    }
+
+    public Customer(Customer copy) {
+        this.id = copy.id;
+        this.name = copy.name;
+        this.scores = copy.scores;
+
     }
 
     public long getId() {
@@ -21,8 +28,8 @@ public class Customer implements Comparable<Customer> {
         return name;
     }
 
-    public static void setName(String name) {
-       Customer.name = name;
+    public void setName(String name) {
+       this.name = name;
     }
 
     public long getScores() {
