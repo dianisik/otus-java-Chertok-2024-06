@@ -5,6 +5,7 @@ package ru.otus;
 
 import com.google.common.collect.Lists;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @SuppressWarnings("java:S106")
 public class HelloOtus {
