@@ -4,10 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.json.Json;
-
-import java.io.IOException;
 import java.util.List;
-
 import jakarta.json.JsonArray;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +22,7 @@ public class ResourcesFileLoader implements Loader {
     }
 
     @Override
-    public List<Measurement> load() throws JsonProcessingException {
+    public List<Measurement> load() throws FileProcessException {
         List<Measurement> measurements;
         ObjectMapper objectMapper = new ObjectMapper();
         try (var jsonReader =
@@ -35,7 +32,7 @@ public class ResourcesFileLoader implements Loader {
             });
         } catch (JsonProcessingException ex) {
             logger.error(ex.getMessage());
-            throw ex;
+            throw new FileProcessException(ex);
         }
         return measurements;
     }
