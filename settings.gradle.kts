@@ -9,6 +9,7 @@ include("hw08-io")
 include("hw09-jdbc")
 include("hw10-jpql")
 include("hw11-cache")
+include("hw12-web-server")
 
 pluginManagement {
     val jgitver: String by settings
@@ -41,3 +42,4 @@ include("hw08-io")
 include("hw09-jdbc")
 include("hw10-jpql")
 include("hw11-cache")
+include("hw12-web-server")
